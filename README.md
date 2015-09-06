@@ -25,7 +25,7 @@ CRITICAL - No process named nginx could be found listening on port 9999 | 'liste
 
 ## On the host to be monitored:
 
-[Download](https://github.com/jlyoung/nagios_check_listening_port_linux/raw/master/nagios_check_listening_port_linux.py) the [nagios_check_listening_port_linux.py)](https://github.com/jlyoung/nagios_check_listening_port_linux/raw/master/nagios_check_listening_port_linux.py) script. Save the script in the *nagios plugins* folder of the host you wish to monitor.  For example:
+[Download](https://github.com/jlyoung/nagios_check_listening_port_linux/raw/master/nagios_check_listening_port_linux.py) the [nagios_check_listening_port_linux.py](https://github.com/jlyoung/nagios_check_listening_port_linux/raw/master/nagios_check_listening_port_linux.py) script. Save the script in the *nagios plugins* folder of the host you wish to monitor.  For example:
 
 ```
 /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py
