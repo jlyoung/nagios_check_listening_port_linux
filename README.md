@@ -48,6 +48,11 @@ Add an nrpe command definition to the config file like so:
 command[check_listening_port]=/usr/bin/python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n $ARG1$ -p $ARG2$
 ```
 
+Restart the nrpe service:
+```
+service nrpe restart
+```
+
 ## On the Nagios server
 
 Create a command definition for `check_listening_port` to be called from a service definition.  The configuration file to be modified is installation dependent.  We'll modify `/usr/local/nagios/etc/objects/commands.cfg` for this example adding the following:
@@ -70,7 +75,16 @@ define service{
 ```
 
 Replace `process_name` with the process you wish to monitor. (e.g. `nginx`)
+
 Replace `port_number` with the port number you wish to monitor. (e.g. `80`)
+
 Modify the service to match your specific installation and configuration details. (i.e. replace the host_name, etc.)
+
+Reload the nagios configuration.
+```
+service nagios restart
+```
+
+
 
 
