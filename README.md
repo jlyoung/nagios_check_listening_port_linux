@@ -11,13 +11,13 @@
 ## Example output
 Executing the script directly on the host to be monitored yields the following results for a process name that is found to be correctly listening on the specified port.
 ```
-[root@ip-joeyoung.io ~]# python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n nginx -p 80
+[root@joeyoung.io ~]# python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n nginx -p 80
 OK. nginx found listening on port 80 for the following address(es): [0.0.0.0] | 'listening_on_expected_port'=1;;;;
 ```
 
 It yields the following when the specified process name could not be found to be listening on the specified port.
 ```
-[root@ip-joeyoung.io ~]# python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n nginx -p 9999
+[root@joeyoung.io ~]# python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n nginx -p 9999
 CRITICAL - No process named nginx could be found listening on port 9999 | 'listening_on_expected_port'=0;;;;
 ```
 
