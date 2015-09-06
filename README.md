@@ -9,7 +9,7 @@
 - /etc/sudoers configured to allow execution of `sudo /bin/netstat -tanp` by the nrpe user
 
 ## Example output
-Executing the script directly on the host to monitored yields the following results for a process name that is found to be correctly listening on the specified port.
+Executing the script directly on the host to be monitored yields the following results for a process name that is found to be correctly listening on the specified port.
 ```
 [root@ip-joeyoung.io ~]# python /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py -n nginx -p 80
 OK. nginx found listening on port 80 for the following address(es): [0.0.0.0] | 'listening_on_expected_port'=1;;;;
