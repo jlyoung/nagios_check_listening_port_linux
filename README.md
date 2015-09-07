@@ -8,6 +8,19 @@
 - Python version 2.4 - 2.7.X
 - /etc/sudoers configured to allow execution of `sudo /bin/netstat -tanp` by the nrpe user
 
+## Usage
+**Note:** process name and port number arguments are **required**.
+```
+Usage: nagios_check_listening_port_linux.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -n PROCESS_NAME, --name=PROCESS_NAME
+                        process name
+  -p PORT_NUMBER, --port=PORT_NUMBER
+                        port number
+```
+
 ## Example output
 Executing the script directly on the host to be monitored yields the following results for a process name that is found to be correctly listening on the specified port.
 ```
