@@ -50,7 +50,7 @@ Modify the `/etc/sudoers` file (for example, using the `visudo` command) to give
 nrpe ALL=(root) NOPASSWD: /bin/netstat -tanp
 ```
 
-In the `/etc/sudoers` locate the following line:
+In the `/etc/sudoers` file locate the following line:
 
 ```
 Defaults    requiretty
