@@ -44,11 +44,31 @@ CRITICAL - No process named nginx could be found listening on port 9999 | 'liste
 /usr/lib/nagios/plugins/nagios_check_listening_port_linux.py
 ```
 
-Modify the /etc/sudoers file (for example, using the `visudo` command) to give the `nrpe` user permission to execute `netstat` as root via the `sudo` command
+Modify the `/etc/sudoers` file (for example, using the `visudo` command) to give the `nrpe` user permission to execute `netstat` as root via the `sudo` command
 
 ```
 nrpe ALL=(root) NOPASSWD: /bin/netstat -tanp
 ```
+
+In the `/etc/sudoers` locate the following line:
+
+```
+Defaults    requiretty
+```
+
+Beneath the above line, add the following line to disable the tty requirement for the nrpe user:
+
+```
+Defaults:nrpe    !requiretty
+```
+
+**If you don't disable the `requiretty`** directive for the nrpe user, you'll get the following **error** message when you attempt to execute the script from a user whose shell is `nologin`:
+
+```
+UNKNONW ERROR - An unknown error occured: sudo: sorry, you must have a tty to run sudo
+```
+
+Save the changes to the `/etc/sudoers` file.
 
 Create an nrpe command definition for the remote execution of the nagios_check_listening_port_linux.py script via `check_nrpe`.
 The configuration file to be modified is installation dependent.  Just as an example:
