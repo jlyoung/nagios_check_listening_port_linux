@@ -62,7 +62,7 @@ Beneath the above line, add the following line to disable the tty requirement fo
 Defaults:nrpe    !requiretty
 ```
 
-**If you don't disable the `requiretty`** directive for the nrpe user, you'll get the following **error** message when you attempt to execute the script from a user whose shell is `nologin`:
+**If you don't disable the `requiretty`** directive for the nrpe user, you'll get the following **error** message when you attempt to execute the script from a user whose default shell is `nologin`:
 
 ```
 UNKNONW ERROR - An unknown error occured: sudo: sorry, you must have a tty to run sudo
